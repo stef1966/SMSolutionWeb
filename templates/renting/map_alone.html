@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_53286b32b3a74c6390e34a6853e2f28b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_53286b32b3a74c6390e34a6853e2f28b" ></div>
+        
+</body>
+<script>    
+    
+            var map_53286b32b3a74c6390e34a6853e2f28b = L.map(
+                "map_53286b32b3a74c6390e34a6853e2f28b",
+                {
+                    center: [45.53405077985435, -73.2769563306875],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 14,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e60c1d90f46742c7b5f08605a00318c8 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_53286b32b3a74c6390e34a6853e2f28b);
+        
+    
+            var feature_group_18d837744f1f46cf94e9be05fe699fdc = L.featureGroup(
+                {}
+            ).addTo(map_53286b32b3a74c6390e34a6853e2f28b);
+        
+    
+            var marker_f93a35df5f994d729fdb01b5981a314b = L.marker(
+                [45.532289521395185, -73.27477833495664],
+                {}
+            ).addTo(feature_group_18d837744f1f46cf94e9be05fe699fdc);
+        
+    
+            var icon_ff923c675f5a44499c45668013767144 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f93a35df5f994d729fdb01b5981a314b.setIcon(icon_ff923c675f5a44499c45668013767144);
+        
+    
+        var popup_d78d98b21c1544a3aa3d9e8a3034301c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d9b005783ca84a45aac885d3b0885993 = $(`<div id="html_d9b005783ca84a45aac885d3b0885993" style="width: 100.0%; height: 100.0%;"><a target='_parent' href='http://127.0.0.1:8000/renting/company/'>Voir</a></div>`)[0];
+            popup_d78d98b21c1544a3aa3d9e8a3034301c.setContent(html_d9b005783ca84a45aac885d3b0885993);
+        
+
+        marker_f93a35df5f994d729fdb01b5981a314b.bindPopup(popup_d78d98b21c1544a3aa3d9e8a3034301c)
+        ;
+
+        
+    
+    
+            marker_f93a35df5f994d729fdb01b5981a314b.bindTooltip(
+                `<div>
+                     Mini Entrepôts St-Basile
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fa33984c921442d29e64bb16a7e318c4 = L.marker(
+                [45.548309657123355, -73.28947529079049],
+                {}
+            ).addTo(feature_group_18d837744f1f46cf94e9be05fe699fdc);
+        
+    
+            var icon_949bc0c35db54dc5a022d9f4a895fe31 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_fa33984c921442d29e64bb16a7e318c4.setIcon(icon_949bc0c35db54dc5a022d9f4a895fe31);
+        
+    
+        var popup_cf9bacbaa3c347ca9d6c448d4a913a90 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_916d0ea706754a8c8ea6ceebf9beece5 = $(`<div id="html_916d0ea706754a8c8ea6ceebf9beece5" style="width: 100.0%; height: 100.0%;"><a target='_parent' href='http://127.0.0.1:8000/renting/company/'>Voir</a></div>`)[0];
+            popup_cf9bacbaa3c347ca9d6c448d4a913a90.setContent(html_916d0ea706754a8c8ea6ceebf9beece5);
+        
+
+        marker_fa33984c921442d29e64bb16a7e318c4.bindPopup(popup_cf9bacbaa3c347ca9d6c448d4a913a90)
+        ;
+
+        
+    
+    
+            marker_fa33984c921442d29e64bb16a7e318c4.bindTooltip(
+                `<div>
+                     Deuxieme
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_33480b797c084bc68f86ea88501c69cf = L.marker(
+                [45.53405077985435, -73.2769563306875],
+                {}
+            ).addTo(feature_group_18d837744f1f46cf94e9be05fe699fdc);
+        
+    
+            var icon_bdced2a392ac437096eeb0b4dfe27faf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_33480b797c084bc68f86ea88501c69cf.setIcon(icon_bdced2a392ac437096eeb0b4dfe27faf);
+        
+    
+        var popup_ac83adf9785a48daa27fbe8672b8a9f0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_78c949856b794c078adc702eeb1181d7 = $(`<div id="html_78c949856b794c078adc702eeb1181d7" style="width: 100.0%; height: 100.0%;"><a target='_parent' href='http://127.0.0.1:8000/renting/company/'>Voir</a></div>`)[0];
+            popup_ac83adf9785a48daa27fbe8672b8a9f0.setContent(html_78c949856b794c078adc702eeb1181d7);
+        
+
+        marker_33480b797c084bc68f86ea88501c69cf.bindPopup(popup_ac83adf9785a48daa27fbe8672b8a9f0)
+        ;
+
+        
+    
+    
+            marker_33480b797c084bc68f86ea88501c69cf.bindTooltip(
+                `<div>
+                     PRemiere d
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_81fda0029f644d8eb1580ae982c535d3 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_e60c1d90f46742c7b5f08605a00318c8,
+                },
+                overlays :  {
+                    "Real Estate" : feature_group_18d837744f1f46cf94e9be05fe699fdc,
+                },
+            };
+            L.control.layers(
+                layer_control_81fda0029f644d8eb1580ae982c535d3.base_layers,
+                layer_control_81fda0029f644d8eb1580ae982c535d3.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_53286b32b3a74c6390e34a6853e2f28b);
+        
+</script>

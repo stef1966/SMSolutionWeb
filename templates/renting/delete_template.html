@@ -1,0 +1,17 @@
+{% extends 'renting/main.html' %}
+
+{% block content %}
+
+<h1>Company form</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{object}}"</p>
+    <a href="{% url 'companies' %}">Go Back</a>
+        <!-- <button>Go back</button> -->
+        <input type="submit" value="confirm"/>
+    
+
+</form>
+
+{% endblock content %}

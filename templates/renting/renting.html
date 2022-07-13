@@ -1,0 +1,27 @@
+{% extends 'renting/main.html' %}
+
+{% block content %}
+<hr>
+<h1>Companys</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Language</th>
+        <th>Units</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for company in companys %}
+        <tr>
+            <td>{{company.name}}</td>
+            <td>{{company.language}}</td>
+            <td>{{company.units}}</td>
+            <td><a href="{% url 'update-company' company.id %}">Edit</td>
+            <td><a href="{% url 'delete-company' company.id %}">Delete</td>
+            <td><a href="{% url 'companys' company.id %}">View</td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

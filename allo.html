@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1e7a6b1424ee48ed92773123c3c2e60b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_1e7a6b1424ee48ed92773123c3c2e60b" ></div>
+        
+</body>
+<script>    
+    
+            var map_1e7a6b1424ee48ed92773123c3c2e60b = L.map(
+                "map_1e7a6b1424ee48ed92773123c3c2e60b",
+                {
+                    center: [45.53405077985435, -73.2769563306875],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 14,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2538eac8cd3344dc9cfd7f20ebece7d8 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_1e7a6b1424ee48ed92773123c3c2e60b);
+        
+    
+            var feature_group_05890d7591de4adea92c4433d51fa35d = L.featureGroup(
+                {}
+            ).addTo(map_1e7a6b1424ee48ed92773123c3c2e60b);
+        
+    
+            var marker_7ed4120d79994e229ea3e6aaecacd119 = L.marker(
+                [45.53405077985435, -73.2769563306875],
+                {}
+            ).addTo(feature_group_05890d7591de4adea92c4433d51fa35d);
+        
+    
+            var icon_e9a3d38f1dcb44498bfd48d1ba1f5efa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7ed4120d79994e229ea3e6aaecacd119.setIcon(icon_e9a3d38f1dcb44498bfd48d1ba1f5efa);
+        
+    
+        var popup_08ab7d8cded64f18844372bdb0cdeb72 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_053768bb2fa545378b3d37d88758f2da = $(`<div id="html_053768bb2fa545378b3d37d88758f2da" style="width: 100.0%; height: 100.0%;"><a href='http://127.0.0.1:8000/renting/company/'>Voir</a></div>`)[0];
+            popup_08ab7d8cded64f18844372bdb0cdeb72.setContent(html_053768bb2fa545378b3d37d88758f2da);
+        
+
+        marker_7ed4120d79994e229ea3e6aaecacd119.bindPopup(popup_08ab7d8cded64f18844372bdb0cdeb72)
+        ;
+
+        
+    
+    
+            marker_7ed4120d79994e229ea3e6aaecacd119.bindTooltip(
+                `<div>
+                     Mini entrepot Saint Basile
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_f31bc824d3b44681b2b0b652da47183c = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_2538eac8cd3344dc9cfd7f20ebece7d8,
+                },
+                overlays :  {
+                    "Real Estate" : feature_group_05890d7591de4adea92c4433d51fa35d,
+                },
+            };
+            L.control.layers(
+                layer_control_f31bc824d3b44681b2b0b652da47183c.base_layers,
+                layer_control_f31bc824d3b44681b2b0b652da47183c.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_1e7a6b1424ee48ed92773123c3c2e60b);
+        
+</script>

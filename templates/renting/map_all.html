@@ -1,0 +1,30 @@
+{% extends 'renting/navbar_main.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<section class="content shadow-lg p-4 m-4 bg-white" id="iFormCompany">
+
+    <!-- Default box -->
+    <div class="card card-solid">
+        <div class="card-body">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{% url 'map_alone' %}" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+
+{% block script %}
+<script>
+    $(document).ready(function () {
+        console.log("READY map_all");
+    })
+
+</script>
+{% endblock script %}

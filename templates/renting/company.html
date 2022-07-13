@@ -1,0 +1,494 @@
+<!doctype html>
+{% extends 'renting/navbar_main.html' %}
+{% load static %}
+
+<style>
+</style>
+
+{% block content %}
+
+<section class="content shadow-lg p-4 m-4 bg-white" id="iFormCompany">
+
+    <!-- Default box -->
+    <div class="card card-solid">
+        <div class="card-body">
+            <div class="content-wrapper">
+
+
+
+                
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#home">{{ language.company }}</a></li>
+                    <li><a data-toggle="tab" href="#facturation">{{ language.billing }}</a></li>
+                    <li><a data-toggle="tab" href="#couleurs">{{ language.colors }}</a></li>
+                </ul>
+
+                <form class="form" action="{% url 'update-company' %}" method="post">
+                    <!-- <form class="form" action="{% url 'create-company' %}" method="post"> -->
+                    {% csrf_token %}
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade in active">
+                            <br>
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-5 form-group custom-block">
+                                        <div class="row">
+                                            <legend class="test">{{ language.company }}</legend>
+                                            <div class="col-sm-12 form-group">
+                                                <label class="control-label">{{ language.company_name }} : </label>
+                                                <input class="form-control" type="text" name="name" maxlength="200" required="" id="id_name" value="{{ company.name }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5 form-group custom-block">
+                                        <div class="row">
+                                            <legend>{{ language.address }}</legend>
+                                            <div class="col-sm-3 form-group">
+                                                <label class="control-label">#</label>
+                                                <input class="form-control" type="text" name="address_street_num" maxlength="20" id="id_address_street_num" value="{{ company.address_street_num|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-9 form-group">
+                                                <label class="control-label">{{ language.street }}</label>
+                                                <input class="form-control" type="text" name="address_street_name" maxlength="100" id="id_address_street_name" value="{{ company.address_street_name|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 form-group">
+                                                <label class="control-label">{{ language.city }}</label>
+                                                <input class="form-control" type="text" name="address_city" maxlength="100" id="id_address_city" value="{{ company.address_city|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-4 form-group">
+                                                <label class="control-label">{{ language.province }}</label>
+                                                <input class="form-control" type="text" name="address_province" maxlength="30" id="id_address_province" value="{{ company.address_province|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-4 form-group">
+                                                <label class="control-label">{{ language.country }}</label>
+                                                <input class="form-control" type="text" name="address_country" maxlength="30" id="id_address_country" value="{{ company.address_country|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-4 form-group">
+                                                <label class="control-label">{{ language.postal_code }}</label>
+                                                <input class="form-control" type="text" name="address_postal_code" maxlength="10" id="id_address_postal_code" value="{{ company.address_postal_code|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <legend>{{ language.communication }}</legend>
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">{{ language.phone }} 1</label>
+                                                <input class="form-control" type="text" name="telephoone1_num" maxlength="20" id="id_telephoone1_num" value="{{ company.telephone1_num|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">{{ language.description }}</label>
+                                                <input class="form-control" type="text" name="telephoone1_name" maxlength="50" id="id_telephoone1_name" value="{{ company.telephone1_name|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">{{ language.phone }} 2</label>
+                                                <input class="form-control" type="text" name="telephoone2_num" maxlength="20" id="id_telephoone2_num" value="{{ company.telephone2_num|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">{{ language.description }}</label>
+                                                <input class="form-control" type="text" name="telephoone2_name" maxlength="50" id="id_telephoone2_name" value="{{ company.telephone2_name|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 form-group">
+                                                <label class="control-label">{{ language.email }}</label>
+                                                <input class="form-control" type="text" name="email" maxlength="100" id="id_email" value="{{ company.email|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 form-group">
+                                                <label class="control-label">{{ language.webpage }}</label>
+                                                <input class="form-control" type="text" name="page_web" maxlength="100" id="id_page_web" value="{{ company.page_web|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1 form-group">
+                                    </div>
+                                    <div class="col-sm-6 form-group custom-block">
+                                        <div class="row">
+                                            <legend>{{ language.primary_contact }}</legend>
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">{{ language.firstname }}</label>
+                                                <input class="form-control" type="text" name="contact1_firstname" maxlength="50" id="id_contact1_firstname" value="{{ company.contact1_firstname|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">{{ language.lastname }}</label>
+                                                <input class="form-control" type="text" name="contact1_lastname" maxlength="50" id="id_contact1_lastname" value="{{ company.contact1_lastname|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3 form-group">
+                                                <label class="control-label">{{ language.phone }}</label>
+                                                <input class="form-control" type="text" name="contact1_tel" maxlength="20" id="id_contact1_tel" value="{{ company.contact1_tel|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label class="control-label">{{ language.cellphone }}</label>
+                                                <input class="form-control" type="text" name="contact1_cell" maxlength="20" id="id_contact1_cell" value="{{ company.contact1_cell|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">{{ language.email }}</label>
+                                                <input class="form-control" type="text" name="contact1_email" maxlength="100" id="id_contact1_email" value="{{ company.contact1_email|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <legend>{{ language.secondary_contact }}</legend>
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">{{ language.firstname }}</label>
+                                                <input class="form-control" type="text" name="contact2_firstname" maxlength="50" id="id_contact2_firstname" value="{{ company.contact2_firstname|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">{{ language.lastname }}</label>
+                                                <input class="form-control" type="text" name="contact2_lastname" maxlength="50" id="id_contact2_lastname" value="{{ company.contact2_lastname|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3 form-group">
+                                                <label class="control-label">{{ language.phone }}</label>
+                                                <input class="form-control" type="text" name="contact2_tel" maxlength="20" id="id_contact2_tel" value="{{ company.contact2_tel|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label class="control-label">{{ language.cellphone }}</label>
+                                                <input class="form-control" type="text" name="contact2_cell" maxlength="20" id="id_contact2_cell" value="{{ company.contact2_cell|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">{{ language.email }}</label>
+                                                <input class="form-control" type="text" name="contact2_email" maxlength="100" id="id_contact2_email" value="{{ company.contact2_email|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <legend style="color: #FF00FF">{{ language.language }}</legend>
+                                                <div class="col-sm-1"></div>
+                                                <div class="col-sm-11 form-check">
+                                                    <input type="radio" class="form-check-input" name="language" id="language1" value="fr" {% if company.language == 'fr' %} checked {% endif %}>
+                                                    <label class="control-label" for="unit1">{{ language.french }}</label><br>
+                                                    <input type="radio" class="form-check-input" name="language" id="language2" value="en" {% if company.language == 'en' %} checked {% endif %}>
+                                                    <label class="control-label" for="unit2">{{ language.english }}</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <legend style="color: #FF00FF">{{ language.measurement_units }}</legend>
+                                                <div class="col-sm-1"></div>
+                                                <div class="col-sm-11 form-check">
+                                                    <input type="radio" class="form-check-input" name="units" id="unit1" value="met" {% if company.units == 'met' %} checked {% endif %}>
+                                                    <label class="control-label" for="unit1">{{ language.metric }}</label><br>
+                                                    <input type="radio" class="form-check-input" name="units" id="init2" value="imp" {% if company.units == 'imp' %} checked {% endif %}>
+                                                    <label class="control-label" for="unit2">{{ language.imperial }}</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="facturation" class="tab-pane fade">
+                            <br>
+                            <div class="col-sm-8">
+                                <legend>{{ language.billing_details }}</legend>
+                                <div class="row cFacturation">
+                                    <div class="col-sm-11">
+                                        <div class="row facture_setup">
+                                            <div class="col-sm-4 form-group">
+                                                <label class="control-label">{{ language.letters_before }} : </label>
+                                                <input class="form-control" type="text" name="inv_letters_before" value="{{ company.inv_letters_before|default_if_none:'' }}" maxlength="10" id="id_inv_letters_before" data-toggle="tooltip" data-placement="top"
+                                                title='Entré les lettres qui apparaisseront devant les # de chaque
+                                    facture.  Ex: Pour la facture 123, si on choisis les lettres "ABC", on
+                                    aurait un # de facture de "ABC123"'>
+                                            </div>
+                                            <div class="col-sm-3 form-group checkbox">
+                                                <label>
+                                                    <input type="checkbox" id="id_inv_add_year" name="inv_add_year" value=1 {% if company.inv_add_year == 1 %} checked {% else %} {% endif %}> 
+                                                    {{ language.add_year }}
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-2 form-group">
+                                                <label class="control-label">{{ language.length }} : </label>
+                                                <input class="form-control" type="number" name="inv_length" value="{{ company.inv_length|default_if_none:'' }}" id="id_inv_length" data-toggle="tooltip" data-placement="top"
+                                                    title='Si on choisi par exemple 12, pour la facture 123, le numéro serait "ABC000000123'>
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label class="control-label">{{ language.overview_example }} : </label>
+                                                <input class="form-control" type="text" id="factureExemple" name="factureExemple" value=""
+                                                    class="form-control" data-toggle="tooltip" data-placement="top"
+                                                    title='Voici a quoi ressemblerait la facture "123".' readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><br>
+                                <legend>{{ language.invoice_sent }}</legend>
+                                <div class="row">
+                                    <div class="col-sm-11">
+                                        <div class="row">
+                                            <div class="col-sm-5 form-group">
+                                                <label class="control-label"># {{ language.day_before_billing }} : </label>
+                                                <input class="form-control" type="number" name="inv_advise_days_bf" value="{{ company.inv_advise_days_bf|default_if_none:'' }}" id="id_inv_advise_days_bf" data-toggle="tooltip" data-placement="top"
+                                                    title="Nombre de jours avant la date de facturation, pour l'envoi des factures mensuels">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                    </div>
+                                </div>
+                                <legend style=>{{ language.taxes }}</legend>
+                                <div class="row">
+                                    <div class="col-sm-11">
+                                        <div class="row">
+                                            <div class="col-sm-5 form-group">
+                                                <label class="control-label">{{ language.taxes }} 1, {{ language.name }} : </label>
+                                                <input class="form-control" type="text" name="taxes1_name" maxlength="20" id="id_taxes1_name" value="{{ company.taxes1_name|default_if_none:'' }}"
+                                                    data-toggle="tooltip" data-placement="top"
+                                                    title="Entrez le nom de la taxe 1">
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label class="control-label">{{ language.taxes }} 1, % : </label>
+                                                <input class="form-control" type="number" name="taxes1_pourc" value="{{ company.taxes1_pourc|default_if_none:'' }}" id="id_taxes1_pourc" data-toggle="tooltip" data-placement="top"
+                                                    title="Entrez le % de la taxe 1">
+                                            </div>
+                                            <div class="col-sm-4 form-group">
+                                                <label class="control-label">{{ language.taxes }} 1, # : </label>
+                                                <input class="form-control" type="text" name="taxes1_num" value="{{ company.taxes1_num|default_if_none:'' }}" maxlength="50" id="id_taxes1_num" data-toggle="tooltip" data-placement="top"
+                                                    title="Entrez le # de la taxe 1">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-5 form-group">
+                                                <label class="control-label">{{ language.taxes }} 2, {{ language.name }} : </label>
+                                                <input class="form-control" type="text" name="taxes2_name" value="{{ company.taxes2_name|default_if_none:'' }}" maxlength="20" id="id_taxes2_name" data-toggle="tooltip" data-placement="top"
+                                                    title="Entrez le nom de la taxe 2">
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label class="control-label">{{ language.taxes }} 2, % : </label>
+                                                <input class="form-control" type="number" name="taxes2_pourc" value="{{ company.taxes2_pourc|default_if_none:'' }}" id="id_taxes2_pourc" data-toggle="tooltip" data-placement="top"
+                                                    title="Entrez le % de la taxe 2">
+                                            </div>
+                                            <div class="col-sm-4 form-group">
+                                                <label class="control-label">{{ language.taxes }} 2, # : </label>
+                                                <input class="form-control" type="text" name="taxes2_num" value="{{ company.taxes2_num|default_if_none:'' }}" maxlength="50" id="id_taxes2_num" data-toggle="tooltip" data-placement="top"
+                                                    title="Entrez le # de la taxe 2">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-5 form-group">
+                                                <label class="control-label">{{ language.taxes }} 3, {{ language.name }} : </label>
+                                                <input class="form-control" type="text" name="taxes3_name" value="{{ company.taxes3_name|default_if_none:'' }}" maxlength="20" id="id_taxes3_name" data-toggle="tooltip" data-placement="top"
+                                                    title="Entrez le nom de la taxe 3">
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label class="control-label">{{ language.taxes }} 3, % : </label>
+                                                <input class="form-control" type="number" name="taxes3_pourc" value="{{ company.taxes3_pourc|default_if_none:'' }}" id="id_taxes3_pourc" data-toggle="tooltip" data-placement="top"
+                                                    title="Entrez le % de la taxe 3">
+                                            </div>
+                                            <div class="col-sm-4 form-group">
+                                                <label class="control-label">{{ language.taxes }} 3, # : </label>
+                                                <input class="form-control" type="text" name="taxes3_num" value="{{ company.taxes3_num|default_if_none:'' }}" maxlength="50" id="id_taxes3_num" data-toggle="tooltip" data-placement="top"
+                                                    title="Entrez le # de la taxe 3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <legend>{{ language.payment_method }}</legend>
+                                <div class="row">
+                                    <div class="col-sm-2"></div>
+                                    <div class="col-sm-10 checkbox">
+                                        <input type="checkbox" name="payment_method" value="Credit" {% if 'Credit' in company.payment_method %} checked {% else %} {% endif %}>{{ language.creditcard }}<br>
+                                        <input type="checkbox" name="payment_method" value="Interac" {% if 'Interac' in company.payment_method %} checked {% else %} {% endif %}>{{ language.interac }}<br>
+                                        <input type="checkbox" name="payment_method" value="Transfert" {% if 'Transfert' in company.payment_method %} checked {% else %} {% endif %}>{{ language.bank_transfer }}<br>
+                                        <input type="checkbox" name="payment_method" value="Comptant" {% if 'Comptant' in company.payment_method %} checked {% else %} {% endif %}>{{ language.cash }}<br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="couleurs" class="tab-pane fade">
+                            <br>
+                            <div class="col-sm-12">
+
+                                <legend>{{ language.renting_status }}</legend>
+                                <div class="row">
+                                    <div class="col-sm-1 form-group custom-block"></div>
+                                    <div class="col-sm-10 form-group custom-block">
+                                        <div class="row ">
+                                            <legend style="color:black;">{{ language.background_colors }}</legend>
+                                            <div class="col-sm-3 form-group d-flex flex-column">
+                                                <label>{{ language.available }}</label>
+                                                <input type="color" id="id_couleurstatuslibre" name="couleurstatuslibre" value="{{ company.couleurstatuslibre }}">
+                                            </div>
+                                            <div class="col-sm-3 form-group d-flex flex-column">
+                                                <label>{{ language.rented }}</label>
+                                                <input type="color" id="id_couleurstatuslouer" name="couleurstatuslouer" value="{{ company.couleurstatuslouer }}">
+                                            </div>
+                                            <div class="col-sm-3 form-group d-flex flex-column">
+                                                <label>{{ language.reserved }}</label>
+                                                <input type="color" id="id_couleurstatusreserver" name="couleurstatusreserver" value="{{ company.couleurstatusreserver }}">
+                                            </div>
+                                            <div class="col-sm-3 form-group d-flex flex-column">
+                                                <label>{{ language.not_available }}</label>
+                                                <input type="color" id="id_couleurstatusindispo" name="couleurstatusindispo" value="{{ company.couleurstatusindispo }}">
+                                            </div>
+                                            <legend style="color:black;">{{ language.text_colors }}</legend>
+                                            <div class="col-sm-3 form-group d-flex flex-column">
+                                                <label>{{ language.available }}</label>
+                                                <input type="color" id="id_couleurstatustlibre" name="couleurstatustlibre" value="{{ company.couleurstatustlibre }}">
+                                            </div>
+                                            <div class="col-sm-3 form-group d-flex flex-column">
+                                                <label>{{ language.rented }}</label>
+                                                <input type="color" id="id_couleurstatustlouer" name="couleurstatustlouer" value="{{ company.couleurstatustlouer }}">
+                                            </div>
+                                            <div class="col-sm-3 form-group d-flex flex-column">
+                                                <label>{{ language.reserved }}</label>
+                                                <input type="color" id="id_couleurstatustreserver" name="couleurstatustreserver" value="{{ company.couleurstatustreserver }}">
+                                            </div>
+                                            <div class="col-sm-3 form-group d-flex flex-column">
+                                                <label>{{ language.not_available }}</label>
+                                                <input type="color" id="id_couleurstatustindispo" name="couleurstatustindispo" value="{{ company.couleurstatustindispo }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <legend>{{ language.6month_available }}</legend>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-11">
+                                        <div class="row">
+                                            <legend style="color:black;">{{ language.background_colors }}</legend>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">< 1 {{ language.month }}</label>
+                                                <input type="color" id="id_couleur1mois" name="couleur1mois" value="{{ company.couleur1mois }}" placeholder="Ime">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label>{{ language.between }} 1-2 {{ language.month }}</label>
+                                                <input type="color" id="id_couleur2mois" name="couleur2mois" value="{{ company.couleur2mois }}">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">{{ language.between }} 2-3 {{ language.month }}</label>
+                                                <input type="color" id="id_couleur3mois" name="couleur3mois" value="{{ company.couleur3mois }}">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">{{ language.between }} 3-4 {{ language.month }}</label>
+                                                <input type="color" id="id_couleur4mois" name="couleur4mois" value="{{ company.couleur4mois }}">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">{{ language.between }} 4-5 {{ language.month }}</label>
+                                                <input type="color" id="id_couleur5mois" name="couleur5mois" value="{{ company.couleur5mois }}">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">{{ language.between }} 5-6 {{ language.month }}</label>
+                                                <input type="color" id="id_couleur6mois" name="couleur6mois" value="{{ company.couleur6mois }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <legend style="color:black;">{{ language.text_colors }}</legend>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">< 1 {{ language.month }}</label>
+                                                <input type="color" id="id_couleur1tmois" name="couleur1tmois" value="{{ company.couleur1tmois }}">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">{{ language.between }} 1-2 {{ language.month }}</label>
+                                                <input type="color" id="id_couleur3tmois" name="couleur2tmois" value="{{ company.couleur2tmois }}">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">{{ language.between }} 2-3 {{ language.month }}</label>
+                                                <input type="color" id="id_couleur3tmois" name="couleur3tmois" value="{{ company.couleur3tmois }}">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">{{ language.between }} 3-4 {{ language.month }}</label>
+                                                <input type="color" id="id_couleur4tmois" name="couleur4tmois" value="{{ company.couleur4tmois }}">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">{{ language.between }} 4-5 {{ language.month }}</label>
+                                                <input type="color" id="id_couleur5tmois" name="couleur5tmois" value="{{ company.couleur5tmois }}">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">{{ language.between }} 5-6 {{ language.month }}</label>
+                                                <input type="color" id="id_couleur6tmois" name="couleur6tmois" value="{{ company.couleur6tmois }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-12"><hr></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-6"></div>
+                            <!-- <div class="col-sm-2">
+                                <div class="row m-2 p-2">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Modal</button>
+                                </div>
+                            </div> -->
+                            <div class="col-sm-2">
+                                <div class="row m-2 p-2">
+                                    <button type="submit" class="btn btn-success" id="iSave" disabled>{{ language.save }}
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="row m-2 p-2">
+                                    <a href="#" id="cancel" name="cancel" class="btn btn-danger">{{ language.cancel }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+<!-- jQuery -->
+<!-- <script src="../../plugins/jquery/jquery.min.js"></script> -->
+<!-- Bootstrap 4 -->
+<!-- <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+<!-- AdminLTE App -->
+<!-- <script src="../../dist/js/adminlte.min.js"></script> -->
+<!-- AdminLTE for demo purposes -->
+<!-- <script src="../../dist/js/demo.js"></script> -->
+
+{% block script %}
+<script>
+    $(document).ready(function(){
+        console.log("READY 2");
+        
+        setFactureApercu();
+        $(".cFacturation").on("change", function (response) {
+            setFactureApercu();
+        });
+        $("#iFormCompany").on('change', function(e) {
+            console.log("Un champ a ete changer");
+            $('#iSave').prop('disabled', false);
+            fieldChanged = true;
+        })
+    })
+
+    function setFactureApercu() {
+        lettresFac = $('#id_inv_letters_before').val();
+        vAjoutAnnee = document.getElementById("id_inv_add_year").checked;
+        if (vAjoutAnnee) lettresFac += new Date().getFullYear();
+        minLongueur = lettresFac.length + 3;
+        lengthInv = parseInt($('#id_inv_length').val());
+        numFacture = 123;
+        lengthInv = lengthInv < minLongueur ? minLongueur : lengthInv;
+        lettresFac += numFacture.toString().padStart(lengthInv-lettresFac.length, "0");
+        $('#factureExemple').val(lettresFac);
+        $('#id_inv_length').val(lengthInv);
+    }
+</script>
+{% endblock script %}

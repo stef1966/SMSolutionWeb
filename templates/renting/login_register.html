@@ -1,0 +1,16 @@
+{% extends 'renting/navbar_renting.html' %}
+
+{% block content %}
+
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username" />
+    <input type="password" name="password" placeholder="Entré le mot de passe" />
+    <input type="submit" value="Login" />
+</form>
+
+{% endblock content %}
+
+{% block script %}
+
+{% endblock script %}

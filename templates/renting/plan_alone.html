@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+{% load static %}
+
+<head>
+    <style>
+        .plan {
+            border: 3px solid blue;
+            background-image: url("{% static 'images/plan2022b.jpg' %}");
+            /* background-image: url("{% static 'images/main_plan_2phases.jpg' %}"); */
+            background-color: #cccccc;
+            background-repeat: no-repeat;
+            background-size: 1221px 919px;
+            width: 1221px;
+            height: 919px;
+        }
+        .tooltip {
+            position: relative;
+            /* position: absolute;
+                bottom: 100%;
+                left: 50%; */
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -60px;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        .rectangle {
+            position: fixed;
+            /* opacity: 50%; */
+            border: 4px;
+            background-color: lightblue;
+            margin: auto;
+            width: 50%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .radioLayer {
+            position: fixed;
+            height: 50px;
+            width: 100px;
+            background: white;
+            border: 5px solid #B22222;
+            border-radius: 10px;
+            margin-top: 0px;
+            margin-bottom: 15px;
+            padding: 10px 10px 1px 10px;
+        }
+
+        .legend6mois {
+            position: fixed;
+            height: 100px;
+            width: 200px;
+            background: white;
+            border: 3px solid blue;
+            border-radius: 10px;
+            margin-top: 0px;
+            margin-bottom: 15px;
+            padding: 10px 10px 16px 10px;
+        }
+    </style>
+    <title>Flowers</title>
+</head>
+
+<body>
+    <div class="container plan">
+        <div id="iActual">
+            <div class="rectangle tooltip layer1" style="height: 60px;width: 39px;top: 22px;left: 1172px">182<span
+                    class="tooltiptext">Tooltip text</span></div>
+            <div class="rectangle tooltip layer2" style="height: 39px;width: 60px;top: 723px;left: 96px">300<span
+                    class="tooltiptext">Tooltip text</span></div>
+        </div>
+        <div class="container radioLayer" style="top: 160px;left: 800px">
+            <div class="form-check">
+                <input type="radio" class="planLayer" id="check1" name="planLayer" value="actuel" checked>
+                <label for="check1">Actuel</label><br>
+                <input type="radio" class="planLayer" id="check2" name="planLayer" value="6mois">
+                <label for="check2">6 mois</label>
+            </div>
+        </div>
+        <div class="container legend6mois" style="top: 160px;left: 550px">
+            <div class="form-check">
+                <div style="background: {{ company.couleur1mois }}">Disponible ce mois ci ({{ legendMois.m1 }})</div>
+                <div style="background: {{ company.couleur2mois }}">Disponible en {{ legendMois.m2 }}</div>
+                <div style="background: {{ company.couleur3mois }}">Disponible en {{ legendMois.m3 }}</div>
+                <div style="background: {{ company.couleur4mois }}">Disponible en {{ legendMois.m4 }}</div>
+                <div style="background: {{ company.couleur5mois }}">Disponible en {{ legendMois.m5 }}</div>
+                <div style="background: {{ company.couleur6mois }}">Disponible en {{ legendMois.m6 }}</div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        console.log("READY Plan");
+        // $(".layer1").hide();
+        $(".planLayer").on('change', function (response) {
+            console.log("Changement fait", response.target.id);
+        });
+        document.getElementById('iActual').innerHTML = '{{ actualHtml|safe }}';
+        // console.log("HTML:", '{{ actualHtml|safe }}')
+    })
+</script>

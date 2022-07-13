@@ -1,0 +1,494 @@
+<!doctype html>
+{% extends 'renting/navbar_main.html' %}
+{% load static %}
+
+<style>
+</style>
+
+{% block content %}
+
+<section class="content shadow-lg p-4 m-4 bg-white">
+
+    <!-- Default box -->
+    <div class="card card-solid">
+        <div class="card-body">
+            <div class="content-wrapper">
+
+
+
+                
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#home">Company</a></li>
+                    <li><a data-toggle="tab" href="#facturation">Facturation</a></li>
+                    <li><a data-toggle="tab" href="#couleurs">Couleurs</a></li>
+                </ul>
+
+                <form class="form" action="{% url 'update-company' %}" method="post">
+                    <!-- <form class="form" action="{% url 'create-company' %}" method="post"> -->
+                    {% csrf_token %}
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade in active">
+                            <br>
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-5 form-group custom-block">
+                                        <div class="row">
+                                            <legend class="test">Compagnie</legend>
+                                            <div class="col-sm-12 form-group">
+                                                <label class="control-label">Nom de la compagnie : </label>
+                                                <input class="form-control" type="text" name="name" maxlength="200" required="" id="id_name" value="{{ company.name }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5 form-group custom-block">
+                                        <div class="row">
+                                            <legend>Adresse</legend>
+                                            <div class="col-sm-3 form-group">
+                                                <label class="control-label">#</label>
+                                                <input class="form-control" type="text" name="address_street_num" maxlength="20" id="id_address_street_num" value="{{ company.address_street_num|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-9 form-group">
+                                                <label class="control-label">Rue</label>
+                                                <input class="form-control" type="text" name="address_street_name" maxlength="100" id="id_address_street_name" value="{{ company.address_street_name|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 form-group">
+                                                <label class="control-label">Ville</label>
+                                                <input class="form-control" type="text" name="address_city" maxlength="100" id="id_address_city" value="{{ company.address_city|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-4 form-group">
+                                                <label class="control-label">Province</label>
+                                                <input class="form-control" type="text" name="address_province" maxlength="30" id="id_address_province" value="{{ company.address_province|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-4 form-group">
+                                                <label class="control-label">Pays</label>
+                                                <input class="form-control" type="text" name="address_country" maxlength="30" id="id_address_country" value="{{ company.address_country|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-4 form-group">
+                                                <label class="control-label">Code postal</label>
+                                                <input class="form-control" type="text" name="address_postal_code" maxlength="10" id="id_address_postal_code" value="{{ company.address_postal_code|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <legend>Communication</legend>
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">Telephone 1</label>
+                                                <input class="form-control" type="text" name="telephoone1_num" maxlength="20" id="id_telephoone1_num" value="{{ company.telephone1_num|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">Description</label>
+                                                <input class="form-control" type="text" name="telephoone1_name" maxlength="50" id="id_telephoone1_name" value="{{ company.telephone1_name|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">Telephone 2</label>
+                                                <input class="form-control" type="text" name="telephoone2_num" maxlength="20" id="id_telephoone2_num" value="{{ company.telephone2_num|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">Description</label>
+                                                <input class="form-control" type="text" name="telephoone2_name" maxlength="50" id="id_telephoone2_name" value="{{ company.telephone2_name|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 form-group">
+                                                <label class="control-label">Courriel</label>
+                                                <input class="form-control" type="text" name="email" maxlength="100" id="id_email" value="{{ company.email|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 form-group">
+                                                <label class="control-label">Page web</label>
+                                                <input class="form-control" type="text" name="page_web" maxlength="100" id="id_page_web" value="{{ company.page_web|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1 form-group">
+                                    </div>
+                                    <div class="col-sm-6 form-group custom-block">
+                                        <div class="row">
+                                            <legend>Contact principale</legend>
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">Prénom</label>
+                                                <input class="form-control" type="text" name="contact1_firstname" maxlength="50" id="id_contact1_firstname" value="{{ company.contact1_firstname|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">Nom</label>
+                                                <input class="form-control" type="text" name="contact1_lastname" maxlength="50" id="id_contact1_lastname" value="{{ company.contact1_lastname|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3 form-group">
+                                                <label class="control-label">Telephone</label>
+                                                <input class="form-control" type="text" name="contact1_tel" maxlength="20" id="id_contact1_tel" value="{{ company.contact1_tel|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label class="control-label">Cellulaire</label>
+                                                <input class="form-control" type="text" name="contact1_cell" maxlength="20" id="id_contact1_cell" value="{{ company.contact1_cell|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">Courriel</label>
+                                                <input class="form-control" type="text" name="contact1_email" maxlength="100" id="id_contact1_email" value="{{ company.contact1_email|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <legend>Contact secondaire</legend>
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">Prénom</label>
+                                                <input class="form-control" type="text" name="contact2_firstname" maxlength="50" id="id_contact2_firstname" value="{{ company.contact2_firstname|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">Nom</label>
+                                                <input class="form-control" type="text" name="contact2_lastname" maxlength="50" id="id_contact2_lastname" value="{{ company.contact2_lastname|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3 form-group">
+                                                <label class="control-label">Telephone</label>
+                                                <input class="form-control" type="text" name="contact2_tel" maxlength="20" id="id_contact2_tel" value="{{ company.contact2_tel|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label class="control-label">Cellulaire</label>
+                                                <input class="form-control" type="text" name="contact2_cell" maxlength="20" id="id_contact2_cell" value="{{ company.contact2_cell|default_if_none:'' }}">
+                                            </div>
+                                            <div class="col-sm-6 form-group">
+                                                <label class="control-label">Courriel</label>
+                                                <input class="form-control" type="text" name="contact2_email" maxlength="100" id="id_contact2_email" value="{{ company.contact2_email|default_if_none:'' }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <legend style="color: #FF00FF">Langue</legend>
+                                                <div class="col-sm-1"></div>
+                                                <div class="col-sm-11 form-check">
+                                                    <input type="radio" class="form-check-input" name="language" id="language1" value="fr" {% if company.language == 'fr' %} checked {% endif %}>
+                                                    <label class="control-label" for="unit1">Francais</label><br>
+                                                    <input type="radio" class="form-check-input" name="language" id="language2" value="en" {% if company.language == 'en' %} checked {% endif %}>
+                                                    <label class="control-label" for="unit2">Anglais</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <legend style="color: #FF00FF">Unités de mesure</legend>
+                                                <div class="col-sm-1"></div>
+                                                <div class="col-sm-11 form-check">
+                                                    <input type="radio" class="form-check-input" name="units" id="unit1" value="met" {% if company.units == 'met' %} checked {% endif %}>
+                                                    <label class="control-label" for="unit1">Métric</label><br>
+                                                    <input type="radio" class="form-check-input" name="units" id="init2" value="imp" {% if company.units == 'imp' %} checked {% endif %}>
+                                                    <label class="control-label" for="unit2">Impérial</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="facturation" class="tab-pane fade">
+                            <br>
+                            <div class="col-sm-8">
+                                <legend>Détails sur la facturation</legend>
+                                <div class="row cFacturation">
+                                    <div class="col-sm-11">
+                                        <div class="row facture_setup">
+                                            <div class="col-sm-4 form-group">
+                                                <label class="control-label">Lettres devant : </label>
+                                                <input class="form-control" type="text" name="inv_letters_before" value="{{ company.inv_letters_before|default_if_none:'' }}" maxlength="10" id="id_inv_letters_before" data-toggle="tooltip" data-placement="top"
+                                                title='Entré les lettres qui apparaisseront devant les # de chaque
+                                    facture.  Ex: Pour la facture 123, si on choisis les lettres "ABC", on
+                                    aurait un # de facture de "ABC123"'>
+                                            </div>
+                                            <div class="col-sm-3 form-group checkbox">
+                                                <label>
+                                                    <input type="checkbox" id="id_inv_add_year" name="inv_add_year" value=1 {% if company.inv_add_year == 1 %} checked {% else %} {% endif %}> 
+                                                    <!-- <input type="checkbox" id="id_inv_add_year" name="inv_add_year" onclick='setCheckbox("id_inv_add_year", value=false)'>  -->
+                                                    <!-- <input type="checkbox" id="id_inv_add_year" name="inv_add_year" value="{{ inv_add_year|default_if_none:'' }}">  -->
+                                                    Ajouter année
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-2 form-group">
+                                                <label class="control-label">Longueur : </label>
+                                                <input class="form-control" type="number" name="inv_length" value="{{ company.inv_length|default_if_none:'' }}" id="id_inv_length" data-toggle="tooltip" data-placement="top"
+                                                    title='Si on choisi par exemple 12, pour la facture 123, le numéro serait "ABC000000123'>
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label class="control-label">Apercu (exemple) : </label>
+                                                <input class="form-control" type="text" id="factureExemple" name="factureExemple" value=""
+                                                    class="form-control" data-toggle="tooltip" data-placement="top"
+                                                    title='Voici a quoi ressemblerait la facture "123".' readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><br>
+                                <legend>Envoie de facture</legend>
+                                <div class="row">
+                                    <div class="col-sm-11">
+                                        <div class="row">
+                                            <div class="col-sm-5 form-group">
+                                                <label class="control-label"># jours avant date facturation : </label>
+                                                <input class="form-control" type="number" name="inv_advise_days_bf" value="{{ company.inv_advise_days_bf|default_if_none:'' }}" id="id_inv_advise_days_bf" data-toggle="tooltip" data-placement="top"
+                                                    title="Nombre de jours avant la date de facturation, pour l'envoi des factures mensuels">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                    </div>
+                                </div>
+                                <legend style=>Taxes</legend>
+                                <div class="row">
+                                    <div class="col-sm-11">
+                                        <div class="row">
+                                            <div class="col-sm-5 form-group">
+                                                <label class="control-label">Taxes 1, Nom : </label>
+                                                <input class="form-control" type="text" name="taxes1_name" maxlength="20" id="id_taxes1_name" value="{{ company.taxes1_name|default_if_none:'' }}"
+                                                    data-toggle="tooltip" data-placement="top"
+                                                    title="Entrez le nom de la taxe 1">
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label class="control-label">Taxes 1, % : </label>
+                                                <input class="form-control" type="number" name="taxes1_pourc" value="{{ company.taxes1_pourc|default_if_none:'' }}" id="id_taxes1_pourc" data-toggle="tooltip" data-placement="top"
+                                                    title="Entrez le % de la taxe 1">
+                                            </div>
+                                            <div class="col-sm-4 form-group">
+                                                <label class="control-label">Taxes 1, # : </label>
+                                                <input class="form-control" type="text" name="taxes1_num" value="{{ company.taxes1_num|default_if_none:'' }}" maxlength="50" id="id_taxes1_num" data-toggle="tooltip" data-placement="top"
+                                                    title="Entrez le # de la taxe 1">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-5 form-group">
+                                                <label class="control-label">Taxes 2, Nom : </label>
+                                                <input class="form-control" type="text" name="taxes2_name" value="{{ company.taxes2_name|default_if_none:'' }}" maxlength="20" id="id_taxes2_name" data-toggle="tooltip" data-placement="top"
+                                                    title="Entrez le nom de la taxe 2">
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label class="control-label">Taxes 2, % : </label>
+                                                <input class="form-control" type="number" name="taxes2_pourc" value="{{ company.taxes2_pourc|default_if_none:'' }}" id="id_taxes2_pourc" data-toggle="tooltip" data-placement="top"
+                                                    title="Entrez le % de la taxe 2">
+                                            </div>
+                                            <div class="col-sm-4 form-group">
+                                                <label class="control-label">Taxes 2, # : </label>
+                                                <input class="form-control" type="text" name="taxes2_num" value="{{ company.taxes2_num|default_if_none:'' }}" maxlength="50" id="id_taxes2_num" data-toggle="tooltip" data-placement="top"
+                                                    title="Entrez le # de la taxe 2">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-5 form-group">
+                                                <label class="control-label">Taxes 3, Nom : </label>
+                                                <input class="form-control" type="text" name="taxes3_name" value="{{ company.taxes3_name|default_if_none:'' }}" maxlength="20" id="id_taxes3_name" data-toggle="tooltip" data-placement="top"
+                                                    title="Entrez le nom de la taxe 3">
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label class="control-label">Taxes 3, % : </label>
+                                                <input class="form-control" type="number" name="taxes3_pourc" value="{{ company.taxes3_pourc|default_if_none:'' }}" id="id_taxes3_pourc" data-toggle="tooltip" data-placement="top"
+                                                    title="Entrez le % de la taxe 3">
+                                            </div>
+                                            <div class="col-sm-4 form-group">
+                                                <label class="control-label">Taxes 3, # : </label>
+                                                <input class="form-control" type="text" name="taxes3_num" value="{{ company.taxes3_num|default_if_none:'' }}" maxlength="50" id="id_taxes3_num" data-toggle="tooltip" data-placement="top"
+                                                    title="Entrez le # de la taxe 3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <legend>Mode de paiement</legend>
+                                <div class="row">
+                                    <div class="col-sm-2"></div>
+                                    <div class="col-sm-10 checkbox">
+                                        <input type="checkbox" name="payment_method" value="Credit" {% if 'Credit' in company.payment_method %} checked {% else %} {% endif %}> Carte de crédit<br>
+                                        <input type="checkbox" name="payment_method" value="Interac" {% if 'Interac' in company.payment_method %} checked {% else %} {% endif %}>Interac<br>
+                                        <input type="checkbox" name="payment_method" value="Transfert" {% if 'Transfert' in company.payment_method %} checked {% else %} {% endif %}>Transfert bancaire<br>
+                                        <input type="checkbox" name="payment_method" value="Comptant" {% if 'Comptant' in company.payment_method %} checked {% else %} {% endif %}>Comptant<br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="couleurs" class="tab-pane fade">
+                            <br>
+                            <div class="col-sm-12">
+
+                                <legend>Status de location</legend>
+                                <div class="row">
+                                    <div class="col-sm-1 form-group custom-block"></div>
+                                    <div class="col-sm-10 form-group custom-block">
+                                        <div class="row ">
+                                            <legend style="color:black;">Couleurs de fond</legend>
+                                            <div class="col-sm-3 form-group d-flex flex-column">
+                                                <label>Libre</label>
+                                                <input type="color" id="id_couleurstatuslibre" name="couleurstatuslibre" value="{{ company.couleurstatuslibre }}">
+                                            </div>
+                                            <div class="col-sm-3 form-group d-flex flex-column">
+                                                <label>Louer</label>
+                                                <input type="color" id="id_couleurstatuslouer" name="couleurstatuslouer" value="{{ company.couleurstatuslouer }}">
+                                            </div>
+                                            <div class="col-sm-3 form-group d-flex flex-column">
+                                                <label>Reserver</label>
+                                                <input type="color" id="id_couleurstatusreserver" name="couleurstatusreserver" value="{{ company.couleurstatusreserver }}">
+                                            </div>
+                                            <div class="col-sm-3 form-group d-flex flex-column">
+                                                <label>Non dispoA</label>
+                                                <input type="color" id="id_couleurstatusindispo" name="couleurstatusindispo" value="{{ company.couleurstatusindispo }}">
+                                            </div>
+                                            <legend style="color:black;">Couleurs de texte</legend>
+                                            <div class="col-sm-3 form-group d-flex flex-column">
+                                                <label>Libre</label>
+                                                <input type="color" id="id_couleurstatustlibre" name="couleurstatustlibre" value="{{ company.couleurstatustlibre }}">
+                                            </div>
+                                            <div class="col-sm-3 form-group d-flex flex-column">
+                                                <label>Louer</label>
+                                                <input type="color" id="id_couleurstatustlouer" name="couleurstatustlouer" value="{{ company.couleurstatustlouer }}">
+                                            </div>
+                                            <div class="col-sm-3 form-group d-flex flex-column">
+                                                <label>Reserver</label>
+                                                <input type="color" id="id_couleurstatustreserver" name="couleurstatustreserver" value="{{ company.couleurstatustreserver }}">
+                                            </div>
+                                            <div class="col-sm-3 form-group d-flex flex-column">
+                                                <label>Non dispoA</label>
+                                                <input type="color" id="id_couleurstatustindispo" name="couleurstatustindispo" value="{{ company.couleurstatustindispo }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <legend>Disponibilité 6 mois</legend>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-11">
+                                        <div class="row">
+                                            <legend style="color:black;">Couleurs de fond</legend>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">< 1 mois</label>
+                                                <input type="color" id="id_couleur1mois" name="couleur1mois" value="{{ company.couleur1mois }}" placeholder="Ime">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label>Entre 1-2 mois</label>
+                                                <input type="color" id="id_couleur2mois" name="couleur2mois" value="{{ company.couleur2mois }}">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">Entre 2-3 mois</label>
+                                                <input type="color" id="id_couleur3mois" name="couleur3mois" value="{{ company.couleur3mois }}">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">Entre 3-4 mois</label>
+                                                <input type="color" id="id_couleur4mois" name="couleur4mois" value="{{ company.couleur4mois }}">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">Entre 4-5 mois</label>
+                                                <input type="color" id="id_couleur5mois" name="couleur5mois" value="{{ company.couleur5mois }}">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">Entre 5-6 mois</label>
+                                                <input type="color" id="id_couleur6mois" name="couleur6mois" value="{{ company.couleur6mois }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <legend style="color:black;">Couleurs de texte</legend>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">< 1 mois</label>
+                                                <input type="color" id="id_couleur1tmois" name="couleur1tmois" value="{{ company.couleur1tmois }}">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">Entre 1-2 mois</label>
+                                                <input type="color" id="id_couleur3tmois" name="couleur2tmois" value="{{ company.couleur2tmois }}">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">Entre 2-3 mois</label>
+                                                <input type="color" id="id_couleur3tmois" name="couleur3tmois" value="{{ company.couleur3tmois }}">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">Entre 3-4 mois</label>
+                                                <input type="color" id="id_couleur4tmois" name="couleur4tmois" value="{{ company.couleur4tmois }}">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">Entre 4-5 mois</label>
+                                                <input type="color" id="id_couleur5tmois" name="couleur5tmois" value="{{ company.couleur5tmois }}">
+                                            </div>
+                                            <div class="col-sm-2 form-group d-flex flex-column">
+                                                <label class="control-label">Entre 5-6 mois</label>
+                                                <input type="color" id="id_couleur6tmois" name="couleur6tmois" value="{{ company.couleur6tmois }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-12"><hr></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-6"></div>
+                            <!-- <div class="col-sm-2">
+                                <div class="row m-2 p-2">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Modal</button>
+                                </div>
+                            </div> -->
+                            <div class="col-sm-2">
+                                <div class="row m-2 p-2">
+                                    <button type="submit" class="btn btn-success">Sauvegarder
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="row m-2 p-2">
+                                    <a href="#" id="cancel" name="cancel" class="btn btn-danger">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+<!-- jQuery -->
+<!-- <script src="../../plugins/jquery/jquery.min.js"></script> -->
+<!-- Bootstrap 4 -->
+<!-- <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+<!-- AdminLTE App -->
+<!-- <script src="../../dist/js/adminlte.min.js"></script> -->
+<!-- AdminLTE for demo purposes -->
+<!-- <script src="../../dist/js/demo.js"></script> -->
+
+{% block script %}
+<script>
+    $(document).ready(function(){
+        console.log("READY 2");
+        
+        setFactureApercu();
+        $(".cFacturation").on("change", function (response) {
+            setFactureApercu();
+        });
+
+        
+        
+    })
+
+    function setFactureApercu() {
+        lettresFac = $('#id_inv_letters_before').val();
+        vAjoutAnnee = document.getElementById("id_inv_add_year").checked;
+        if (vAjoutAnnee) lettresFac += new Date().getFullYear();
+        minLongueur = lettresFac.length + 3;
+        lengthInv = parseInt($('#id_inv_length').val());
+        numFacture = 123;
+        lengthInv = lengthInv < minLongueur ? minLongueur : lengthInv;
+        lettresFac += numFacture.toString().padStart(lengthInv-lettresFac.length, "0");
+        $('#factureExemple').val(lettresFac);
+        $('#id_inv_length').val(lengthInv);
+    }
+</script>
+{% endblock script %}

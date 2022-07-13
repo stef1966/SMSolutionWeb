@@ -1,0 +1,163 @@
+{% extends 'renting/navbar_main test.html' %}
+{% load static %}
+
+
+{% block head %}
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+    </script>
+
+    <style>
+    </style>
+    <style>
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    </style>
+
+
+    <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>
+        #map_a208051ec8d94701ac230bad0a92a2cd {
+            position: relative;
+            width: 100.0%;
+            height: 100.0%;
+            left: 0.0%;
+            top: 0.0%;
+        }
+    </style>
+
+</head>
+{% endblock head %}
+
+{% block content %}
+
+<section class="content shadow-lg p-4 m-4 bg-white" id="iFormCompany">
+
+    <!-- Default box -->
+    <div class="card card-solid">
+        <div class="card-body">
+            <div style="height: 500px">
+                <iframe src="https://www.centris.ca/en/properties~for-sale~montreal-island" title="W3Schools Free Online Web Tutorials"></iframe>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+<!-- jQuery -->
+<!-- <script src="../../plugins/jquery/jquery.min.js"></script> -->
+<!-- Bootstrap 4 -->
+<!-- <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+<!-- AdminLTE App -->
+<!-- <script src="../../dist/js/adminlte.min.js"></script> -->
+<!-- AdminLTE for demo purposes -->
+<!-- <script src="../../dist/js/demo.js"></script> -->
+
+{% block script %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+
+<script>
+
+    console.log("Marker:", L.Icon.Default.prototype._getIconUrl());
+    var map_a208051ec8d94701ac230bad0a92a2cd = L.map(
+        "map_a208051ec8d94701ac230bad0a92a2cd",
+        {
+            center: [45.53405077985435, -73.2769563306875],
+            crs: L.CRS.EPSG3857,
+            zoom: 14,
+            zoomControl: true,
+            preferCanvas: false,
+        }
+    );
+
+    var tile_layer_8728b0d336ed445685732297c6d64b42 = L.tileLayer(
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        { "attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false }
+    ).addTo(map_a208051ec8d94701ac230bad0a92a2cd);
+
+
+    var feature_group_325fed5aae54466d964f3f56cc8a4f58 = L.featureGroup(
+        {}
+    ).addTo(map_a208051ec8d94701ac230bad0a92a2cd);
+
+
+    var marker_57926f6275994c73a1481f781c8b2ef3 = L.marker(
+        [45.53405077985435, -73.2769563306875],
+        {}
+    ).addTo(feature_group_325fed5aae54466d964f3f56cc8a4f58);
+
+
+    var icon_5deb1b58a81649f79418e1e35094e64f = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon" }
+    );
+    marker_57926f6275994c73a1481f781c8b2ef3.setIcon(icon_5deb1b58a81649f79418e1e35094e64f);
+
+
+    var popup_22af44c2cd66445c8dcb183d79dd2a71 = L.popup({ "maxWidth": "100%" });
+
+
+    var html_0088450e3fe54e1c9f558525dfc28f48 = $(`<div id="html_0088450e3fe54e1c9f558525dfc28f48" style="width: 100.0%; height: 100.0%;"><a href='http://127.0.0.1:8000/renting/company/'>Voir</a></div>`)[0];
+    popup_22af44c2cd66445c8dcb183d79dd2a71.setContent(html_0088450e3fe54e1c9f558525dfc28f48);
+
+
+    marker_57926f6275994c73a1481f781c8b2ef3.bindPopup(popup_22af44c2cd66445c8dcb183d79dd2a71)
+        ;
+
+
+
+
+    marker_57926f6275994c73a1481f781c8b2ef3.bindTooltip(
+        `<div>
+             Mini entrepot Saint Basile
+         </div>`,
+        { "sticky": true }
+    );
+
+
+    var layer_control_3d8ac08fc17441eb84e1a83f83cc6928 = {
+        base_layers: {
+            "openstreetmap": tile_layer_8728b0d336ed445685732297c6d64b42,
+        },
+        overlays: {
+            "Real Estate": feature_group_325fed5aae54466d964f3f56cc8a4f58,
+        },
+    };
+    L.control.layers(
+        layer_control_3d8ac08fc17441eb84e1a83f83cc6928.base_layers,
+        layer_control_3d8ac08fc17441eb84e1a83f83cc6928.overlays,
+        { "autoZIndex": true, "collapsed": true, "position": "topright" }
+    ).addTo(map_a208051ec8d94701ac230bad0a92a2cd);
+
+</script>
+
+<script>
+    $(document).ready(function () {
+        console.log("READY map_all");
+    })
+
+</script>
+{% endblock script %}

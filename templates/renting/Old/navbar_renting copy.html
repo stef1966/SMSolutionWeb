@@ -1,0 +1,115 @@
+{% load static %}
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "styles/main.css" %}'>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> -->
+    <script src="https://kit.fontawesome.com/8b531a6f4d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- Pour les TAB dans Compagnies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+<!-- Viens du template -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'styles/vendors/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/vendors/themify-icons/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/vendors/flag-icon-css/css/flag-icon.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/vendors/selectFX/css/cs-skin-elastic.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/vendors/jqvmap/dist/jqvmap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <script src="{% static 'styles/vendors/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'styles/vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'styles/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+    <script src="{% static 'styles/vendors/chart.js/dist/Chart.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/dashboard.js' %}"></script>
+    <script src="{% static 'assets/js/widgets.js' %}"></script>
+    <script src="{% static 'styles/vendors/jqvmap/dist/jquery.vmap.min.js' %}"></script>
+    <script src="{% static 'styles/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js' %}"></script>
+    <script src="{% static 'styles/vendors/jqvmap/dist/maps/jquery.vmap.world.js' %}"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ -->
+
+</head>
+
+<style>
+    #sidebar-nav {
+        width: 160px;
+        background: lightgrey;
+    }
+    legend {
+        color: blue;
+    }
+    .padmenu {
+        padding: 0px 10px 1px 10px;
+    }
+    .marginmenu {
+        margin-top: 5%;
+        padding-left: 5px;
+    }
+
+</style>
+
+<aside id="left-panel" class="left-panel" style="background: #F3F6F9">
+    <!-- <nav class="navbar navbar-expand-sm navbar-default"> -->
+
+        <div class="container-fluid">
+            <div class="row flex-nowrap">
+                <div class="col-auto px-0">
+                    <div id="sidebar" class="collapse collapse-horizontal show border-end sticky-top">
+                        <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-100">
+                            <img class="animation__shake p-2" src="{% static 'images/logo1.png' %}" alt="AdminLTELogo" height="50">
+                            <!-- <hr class="pb-n5"> -->
+                            <hr class="m-n5">
+                            <h3 class="marginmenu">Sommaire</h3>
+                            <span class="padmenu"><a style="width: 142px;background: #FCF3CF" href="{% url 'main' %}" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i class="fa-solid fa-gauge"></i>&nbsp;&nbsp; Dashboard</a></span>
+                            <h3 class="marginmenu">Contrats</h3>
+                            <span class="padmenu"><a style="width: 142px;background: #EBF5FB" href="" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i class="fas fa-file-invoice nav-icon"></i>&nbsp;&nbsp; Liste</a></span>
+                            <span class="padmenu"><a style="width: 142px;background: #EBF5FB" href="#" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i class="fas fa-bolt nav-icon"></i>&nbsp;&nbsp; Puces</a></span>
+                            <h3 class="marginmenu">Entrepots</h3>
+                            <span class="padmenu"><a style="width: 142px;background: #E8F8F5" href="#" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i class="fas fa-image nav-icon"></i>&nbsp;&nbsp; Plan</a></span>
+                            <span class="padmenu"><a style="width: 142px;background: #E8F8F5" href="#" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i class="fas fa-globe-americas nav-icon"></i>&nbsp;&nbsp; Plan 6 mois</a></span>
+                            <span class="padmenu"><a style="width: 142px;background: #E8F8F5" href="#" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i class="fas fa-search nav-icon"></i>&nbsp;&nbsp; Gantt</a></span>
+                            <span class="padmenu"><a style="width: 142px;background: #E8F8F5" href="#" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i class="fab fa-searchengin nav-icon"></i>&nbsp;&nbsp; Date</a></span>
+                            <h3 class="marginmenu">Clients</h3>
+                            <span class="padmenu"><a style="width: 142px;background: #F5EEF8" href="#" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i class="fas fa-user-friends nav-icon"></i>&nbsp;&nbsp; Liste</a></span>
+                            <span class="padmenu"><a style="width: 142px;background: #F5EEF8" href="#" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i class="fas fa-user-plus nav-icon"></i>&nbsp;&nbsp; Nouveau</a></span>
+                            <span class="padmenu"><a style="width: 142px;background: #F5EEF8" href="#" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i class="fas fa-list nav-icon"></i>&nbsp;&nbsp;&nbsp; Attente</a></span>
+                            <h3 class="marginmenu">Factures</h3>
+                            <span class="padmenu"><a style="width: 142px;background: #F9EBEA" href="#" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i class="fas fa-file-invoice nav-icon"></i>&nbsp;&nbsp; Liste</a></span>
+                            <span class="padmenu"><a style="width: 142px;background: #F9EBEA" href="#" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i class="fas fa-money-bill-wave nav-icon"></i>&nbsp;&nbsp; Paiements</a></span>
+                            <h3 class="marginmenu">Companie</h3>
+                            <span class="padmenu"><a style="width: 142px;background: #D6EAF8" href="{% url 'company' %}" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i class="fas fa-wrench nav-iconn"></i>&nbsp;&nbsp; Paramètres</a></span>
+                        </div>
+                    </div>
+                </div>
+                <main class="col ps-md-2 pt-2">
+                    <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" class="border rounded-3 p-1 text-decoration-none"><i class="bi bi-list bi-lg py-2 p-1"></i> Menu</a>
+                    <br><br>
+
+                    {% block content %}
+                    {% endblock content %}
+                </main>
+            </div>
+        </div>
+    <!-- </nav> -->
+</aside><!-- /#left-panel -->
+
+{% block script %}
+{% endblock script %}
+

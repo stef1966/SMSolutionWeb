@@ -1,0 +1,45 @@
+<!doctype html>
+{% extends 'renting/navbar_main.html' %}
+{% load static %}
+
+<style>
+</style>
+
+{% block content %}
+
+<section class="content shadow-lg p-4 m-4 bg-white" id="iFormCompany">
+
+    <!-- Default box -->
+    <div class="card card-solid">
+        <div class="card-body">
+            <div class="content-wrapper">
+
+                {{ map_html|safe }}
+
+                
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+<!-- jQuery -->
+<!-- <script src="../../plugins/jquery/jquery.min.js"></script> -->
+<!-- Bootstrap 4 -->
+<!-- <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+<!-- AdminLTE App -->
+<!-- <script src="../../dist/js/adminlte.min.js"></script> -->
+<!-- AdminLTE for demo purposes -->
+<!-- <script src="../../dist/js/demo.js"></script> -->
+
+{% block script %}
+<script>
+    $(document).ready(function(){
+        console.log("READY map_all");
+    })
+
+</script>
+{% endblock script %}

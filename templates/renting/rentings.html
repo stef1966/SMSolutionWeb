@@ -1,0 +1,17 @@
+{% extends 'renting/main.html' %}
+
+{% block content %}
+
+<br>
+<img style="max-width: 400px" src='{{ companys.logo.url }}'>
+
+<h1>{{ companys.name }}</h1>
+<br>
+<p>{{ companys.language }}</p>
+<hr>
+
+{% for realestate in companys.realestate_id.all %}
+    <span style='border:1px solid green'>{{ realestate.type }}</span>
+{% endfor %}
+
+{% endblock content %}

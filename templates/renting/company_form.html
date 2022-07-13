@@ -1,0 +1,14 @@
+{% extends 'renting/navbar3.html' %}
+
+{% block content %}
+
+<h1>Company form</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit">
+
+</form>
+
+{% endblock content %}

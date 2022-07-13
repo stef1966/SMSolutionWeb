@@ -1,0 +1,497 @@
+<!doctype html>
+{% extends 'renting/navbar4.html' %}
+
+{% block content %}
+<div class="content-wrapper">
+    
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Copmpany</a></li>
+        <li><a data-toggle="tab" href="#facturation">Facturation</a></li>
+        <li><a data-toggle="tab" href="#couleurs">Couleurs</a></li>
+    </ul>
+    
+
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <br>
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="row">
+                            <legend>Compagnie</legend>
+                            <div class="col-sm-12 form-group">
+                                <label class="control-label">Nom de la compagnie : </label>
+                                <input type="text" id="nomCompagnie" name="nomCompagnie" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 form-group custom-block">
+                            <div class="row">
+                                <legend>Adresse</legend>
+                                <div class="col-sm-3 form-group">
+                                    <label class="control-label">#</label>
+                                    <input type="text" id="numRue" name="numRue" class="form-control">
+                                </div>
+                                <div class="col-sm-9 form-group">
+                                    <label class="control-label">Rue</label>
+                                    <input type="text" id="rue" name="rue" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 form-group">
+                                    <label class="control-label">Ville</label>
+                                    <input type="text" id="ville" name="ville" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4 form-group">
+                                    <label class="control-label">Province</label>
+                                    <input type="text" id="province" name="province" class="form-control">
+                                </div>
+                                <div class="col-sm-4 form-group">
+                                    <label class="control-label">Pays</label>
+                                    <input type="text" id="pays" name="pays" class="form-control">
+                                </div>
+                                <div class="col-sm-4 form-group">
+                                    <label class="control-label">Code postal</label>
+                                    <input type="text" id="codePostal" name="codePostal" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <legend>Communication</legend>
+                                <div class="col-sm-6 form-group">
+                                    <label class="control-label">Telephone 1</label>
+                                    <input type="text" id="telephone1" name="telephone1" class="form-control">
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <label class="control-label">Description</label>
+                                    <input type="text" id="tel1Description" name="courriel" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 form-group">
+                                    <label class="control-label">Telephone 2</label>
+                                    <input type="text" id="telephone2" name="telephone2" class="form-control">
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <label class="control-label">Description</label>
+                                    <input type="text" id="tel2Description" name="tel2Description" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 form-group">
+                                    <label class="control-label">Courriel</label>
+                                    <input type="text" id="courriel" name="courriel" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 form-group">
+                                    <label class="control-label">Page web</label>
+                                    <input type="text" id="pageWeb" name="pageWeb" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1 form-group">
+                        </div>
+                        <div class="col-sm-6 form-group custom-block">
+                            <div class="row">
+                                <legend>Contact principale</legend>
+                                <div class="col-sm-6 form-group">
+                                    <label class="control-label">Prénom</label>
+                                    <input type="text" id="contact1Prenom" name="contact1Prenom" class="form-control">
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <label class="control-label">Nom</label>
+                                    <input type="text" id="contact1Nom" name="contact1Nom" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3 form-group">
+                                    <label class="control-label">Telephone</label>
+                                    <input type="text" id="contact1Tel" name="contact1Tel" class="form-control">
+                                </div>
+                                <div class="col-sm-3 form-group">
+                                    <label class="control-label">Cellulaire</label>
+                                    <input type="text" id="contact1Cell" name="contact1Cell" class="form-control">
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <label class="control-label">Courriel</label>
+                                    <input type="text" id="contact1Courriel" name="contact1Courriel" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <legend>Contact secondaire</legend>
+                                <div class="col-sm-6 form-group">
+                                    <label class="control-label">Prénom</label>
+                                    <input type="text" id="contact2Prenom" name="contact2Prenom" class="form-control">
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <label class="control-label">Nom</label>
+                                    <input type="text" id="contact2Nom" name="contact2Nom" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3 form-group">
+                                    <label class="control-label">Telephone</label>
+                                    <input type="text" id="contact2Tel" name="contact2Tel" class="form-control">
+                                </div>
+                                <div class="col-sm-3 form-group">
+                                    <label class="control-label">Cellulaire</label>
+                                    <input type="text" id="contact2Cell" name="contact2Cell" class="form-control">
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <label class="control-label">Courriel</label>
+                                    <input type="text" id="contact2Courriel" name="contact2Courriel" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="facturation" class="tab-pane fade">
+            <br>
+            <div class="col-sm-8">
+                <legend>Détails sur la facturation</legend>
+                <div class="row">
+                    <div class="col-sm-11">
+                        <div class="row facture_setup">
+                            <div class="col-sm-4 form-group">
+                                <label class="control-label">Lettres devant : </label>
+                                <input type="text" id="lettresFacture" name="lettresFacture" class="form-control"
+                                        data-toggle="tooltip" data-placement="top"
+                                        title='Entré les lettres qui apparaisseront devant les # de chaque
+                                        facture.  Ex: Pour la facture 123, si on choisis les lettres "ABC", on
+                                        aurait un # de facture de "ABC123"'>
+                            </div>
+                            <div class="col-sm-3 form-group checkbox">
+                                <label><input type="checkbox" id="cbAjoutAnnee" name="cbAjoutAnnee" value=""> Ajouter année</label>
+
+                            </div>
+                            <div class="col-sm-2 form-group">
+                                <label class="control-label">Longueur : </label>
+                                <input type="text" id="longueurFacture" name="longueurFacture" class="form-control"
+                                        data-toggle="tooltip" data-placement="top"
+                                        title='Si on choisi par exemple 12, pour la facture 123, le numéro serait "ABC000000123'>
+                            </div>
+                            <div class="col-sm-3 form-group">
+                                <label class="control-label">Apercu (exemple) : </label>
+                                <input type="text" id="factureExemple" name="factureExemple" class="form-control"
+                                        data-toggle="tooltip" data-placement="top"
+                                        title='Voici a quoi ressemblerait la facture "123".' readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div><br>
+                <legend>Envoie de facture</legend>
+                <div class="row">
+                    <div class="col-sm-11">
+                        <div class="row">
+                            <div class="col-sm-5 form-group">
+                                <label class="control-label"># jours avant date facturation : </label>
+                                <input type="text" id="jourAvantFact" name="jourAvantFact" class="form-control"
+                                        data-toggle="tooltip" data-placement="top"
+                                        title="Nombre de jours avant la date de facturation, pour l'envoi des factures mensuels">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                    </div>
+                </div>
+                <legend style=>Taxes</legend>
+                <div class="row">
+                    <div class="col-sm-11">
+                        <div class="row">
+                            <div class="col-sm-5 form-group">
+                                <label class="control-label">Taxes 1, Nom : </label>
+                                <input type="text" id="taxes1Nom" name="taxes1Nom" class="form-control"
+                                        data-toggle="tooltip" data-placement="top"
+                                        title="Entrez le nom de la taxe 1">
+                            </div>
+                            <div class="col-sm-3 form-group">
+                                <label class="control-label">Taxes 1, % : </label>
+                                <input type="number" id="taxes1Pourc" name="taxes1Pourc" class="form-control"
+                                        data-toggle="tooltip" data-placement="top"
+                                        title="Entrez le % de la taxe 1">
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <label class="control-label">Taxes 1, # : </label>
+                                <input type="text" id="taxes1Num" name="taxes1Num" class="form-control"
+                                        data-toggle="tooltip" data-placement="top"
+                                        title="Entrez le # de la taxe 1">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-5 form-group">
+                                <label class="control-label">Taxes 2, Nom : </label>
+                                <input type="text" id="taxes2Nom" name="taxes2Nom" class="form-control"
+                                        data-toggle="tooltip" data-placement="top"
+                                        title="Entrez le nom de la taxe 2">
+                            </div>
+                            <div class="col-sm-3 form-group">
+                                <label class="control-label">Taxes 2, % : </label>
+                                <input type="number" id="taxes2Pourc" name="taxes2Pourc" class="form-control"
+                                        data-toggle="tooltip" data-placement="top"
+                                        title="Entrez le % de la taxe 2">
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <label class="control-label">Taxes 2, # : </label>
+                                <input type="text" id="taxes2Num" name="taxes2Num" class="form-control"
+                                        data-toggle="tooltip" data-placement="top"
+                                        title="Entrez le # de la taxe 2">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-5 form-group">
+                                <label class="control-label">Taxes 3, Nom : </label>
+                                <input type="text" id="taxes3Nom" name="taxes3Nom" class="form-control"
+                                        data-toggle="tooltip" data-placement="top"
+                                        title="Entrez le nom de la taxe 3">
+                            </div>
+                            <div class="col-sm-3 form-group">
+                                <label class="control-label">Taxes 3, % : </label>
+                                <input type="number" id="taxes3Pourc" name="taxes3Pourc" class="form-control"
+                                        data-toggle="tooltip" data-placement="top"
+                                        title="Entrez le % de la taxe 3">
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <label class="control-label">Taxes 3, # : </label>
+                                <input type="text" id="taxes3Num" name="taxes3Num" class="form-control"
+                                        data-toggle="tooltip" data-placement="top"
+                                        title="Entrez le # de la taxe 3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <legend>Mode de paiement</legend>
+                <div class="row">
+                    <div class="col-sm-12 div_mode">
+                        <div class="row cModePaiement">
+                            <div class="col-sm-12 form-group">
+                                <label class="control-label">Choix 1 : </label>
+                                <input type="text" id="modePaiement1" name="modePaiement" class="form-control"
+                                        data-toggle="tooltip" data-placement="top"
+                                        title="Ajouter/Retirer le(s) mode(s) de paiement accepter.">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="ajouterClient">
+                    <div class="form-group col-lg-6" id="bAddMode">
+                        <button class="add_mode btn btn-block btn-outline-success" type="button">Ajouter un mode</button>
+                    </div>
+                    <div class="form-group col-lg-6" id="bRemoveMode">
+                        <button class="remove_mode btn btn-block btn-outline-danger" type="button">Effacer un mode</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="couleurs" class="tab-pane fade">
+            <br>
+            <div class="col-sm-12">
+                
+                <legend>Status de location</legend>
+                <div class="row">
+                    <div class="col-sm-1 form-group custom-block"></div>
+                    <div class="col-sm-10 form-group custom-block">
+                        <div class="row ">
+                            <legend style="color:black;">Couleurs de fond</legend>
+                            <div class="col-sm-3 form-group d-flex flex-column">
+                                <label>Libre</label>
+                                <input type="color" id="colorStatusLibre" name="colorStatusLibre" value="#ff0000">
+                            </div>
+                            <div class="col-sm-3 form-group d-flex flex-column">
+                                <label>Louer</label>
+                                <input type="color" id="colorStatusLouer" name="colorStatusLouer" value="#ff0000">
+                            </div>
+                            <div class="col-sm-3 form-group d-flex flex-column">
+                                <label>Reserver</label>
+                                <input type="color" id="colorStatusReserver" name="colorStatusReserver" value="#ff0000">
+                            </div>
+                            <div class="col-sm-3 form-group d-flex flex-column">
+                                <label>Non dispoA</label>
+                                <input type="color" id="colorStatusNA" name="colorStatusNA" value="#ff0000">
+                            </div>
+                            <legend style="color:black;">Couleurs de texte</legend>
+                            <div class="col-sm-3 form-group d-flex flex-column">
+                                <label>Libre</label>
+                                <input type="color" id="colorStatusTLibre" name="colorStatusTLibre" value="#ff0000">
+                            </div>
+                            <div class="col-sm-3 form-group d-flex flex-column">
+                                <label>Louer</label>
+                                <input type="color" id="colorStatusTLouer" name="colorStatusTLouer" value="#ff0000">
+                            </div>
+                            <div class="col-sm-3 form-group d-flex flex-column">
+                                <label>Reserver</label>
+                                <input type="color" id="colorStatusTReserver" name="colorStatusTReserver" value="#ff0000">
+                            </div>
+                            <div class="col-sm-3 form-group d-flex flex-column">
+                                <label>Non dispoA</label>
+                                <input type="color" id="colorStatusTNA" name="colorStatusTNA" value="#ff0000">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <legend>Disponibilité 6 mois</legend>
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-11">
+                        <legend style="color:black;">Couleurs de fond</legend>
+                        <div class="row">
+                            
+                            <div class="col-sm-2 form-group d-flex flex-column">
+                                <label class="control-label">< 1 mois</label>
+                                <input type="color" id="color1mois" name="color1mois" value="#ff0000" placeholder="Ime">
+                            </div>
+                            <div class="col-sm-2 form-group">
+                                <label class="control-label">Entre 1-2 mois</label>
+                                <input type="color" id="color2mois" name="color2mois" value="#ff0000">
+                            </div>
+                            <div class="col-sm-2 form-group">
+                                <label class="control-label">Entre 2-3 mois</label>
+                                <input type="color" id="color3mois" name="color3mois" value="#ff0000">
+                            </div>
+                            <div class="col-sm-2 form-group">
+                                <label class="control-label">Entre 3-4 mois</label>
+                                <input type="color" id="color4mois" name="color4mois" value="#ff0000">
+                            </div>
+                            <div class="col-sm-2 form-group">
+                                <label class="control-label">Entre 4-5 mois</label>
+                                <input type="color" id="color5mois" name="color5mois" value="#ff0000">
+                            </div>
+                            <div class="col-sm-2 form-group">
+                                <label class="control-label">Entre 5-6 mois</label>
+                                <input type="color" id="color6mois" name="color6mois" value="#ff0000">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <legend style="color:black;">Couleurs de texte</legend>
+                            <div class="col-sm-2 form-group d-flex flex-column">
+                                <label class="control-label">< 1 mois</label>
+                                <input type="color" id="color1Tmois" name="color1Tmois" value="#ff0000">
+                            </div>
+                            <div class="col-sm-2 form-group">
+                                <label class="control-label">Entre 1-2 mois</label>
+                                <input type="color" id="color2Tmois" name="color2Tmois" value="#ff0000">
+                            </div>
+                            <div class="col-sm-2 form-group">
+                                <label class="control-label">Entre 2-3 mois</label>
+                                <input type="color" id="color3Tmois" name="color3Tmois" value="#ff0000">
+                            </div>
+                            <div class="col-sm-2 form-group">
+                                <label class="control-label">Entre 3-4 mois</label>
+                                <input type="color" id="color4Tmois" name="color4Tmois" value="#ff0000">
+                            </div>
+                            <div class="col-sm-2 form-group">
+                                <label class="control-label">Entre 4-5 mois</label>
+                                <input type="color" id="color5Tmois" name="color5Tmois" value="#ff0000">
+                            </div>
+                            <div class="col-sm-2 form-group">
+                                <label class="control-label">Entre 5-6 mois</label>
+                                <input type="color" id="color6Tmois" name="color6Tmois" value="#ff0000">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div id="menu1" class="tab-pane fade">
+            <h3>Menu 1</h3>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+            <div class="home card">
+                <div class="card-header"><strong>Company2</strong><small> Form</small></div>
+                <div class="card-body card-block">
+                    <div class="form-group"><label for="company" class=" form-control-label">Company2</label><input type="text" id="company" placeholder="Enter your company name" class="form-control"></div>
+                    <div class="form-group"><label for="vat" class=" form-control-label">VAT</label><input type="text" id="vat" placeholder="DE1234567890" class="form-control"></div>
+                    <div class="form-group"><label for="street" class=" form-control-label">Street</label><input type="text" id="street" placeholder="Enter street name" class="form-control"></div>
+                    <div class="row form-group">
+                        <div class="col-8">
+                        <div class="form-group"><label for="city" class=" form-control-label">City</label><input type="text" id="city" placeholder="Enter your city" class="form-control"></div>
+                        </div>
+                        <div class="col-8">
+                        <div class="form-group"><label for="postal-code" class=" form-control-label">Postal Code</label><input type="text" id="postal-code" placeholder="Postal Code" class="form-control"></div>
+                        </div>
+                    </div>
+                    <div class="form-group"><label for="country" class=" form-control-label">Country</label><input type="text" id="country" placeholder="Country name" class="form-control"></div>
+                </div>
+            </div>
+            
+        </div>
+        <div id="menu2" class="tab-pane fade">
+            <h3>Menu 2</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+
+            <div class="home card">
+                <div class="card-header"><strong>Company3</strong><small> Form</small></div>
+                <div class="card-body card-block">
+                    <div class="form-group"><label for="company" class=" form-control-label">Company3</label><input type="text" id="company" placeholder="Enter your company name" class="form-control"></div>
+                    <div class="form-group"><label for="vat" class=" form-control-label">VAT</label><input type="text" id="vat" placeholder="DE1234567890" class="form-control"></div>
+                    <div class="form-group"><label for="street" class=" form-control-label">Street</label><input type="text" id="street" placeholder="Enter street name" class="form-control"></div>
+                    <div class="row form-group">
+                        <div class="col-8">
+                        <div class="form-group"><label for="city" class=" form-control-label">City</label><input type="text" id="city" placeholder="Enter your city" class="form-control"></div>
+                        </div>
+                        <div class="col-8">
+                        <div class="form-group"><label for="postal-code" class=" form-control-label">Postal Code</label><input type="text" id="postal-code" placeholder="Postal Code" class="form-control"></div>
+                        </div>
+                    </div>
+                    <div class="form-group"><label for="country" class=" form-control-label">Country</label><input type="text" id="country" placeholder="Country name" class="form-control"></div>
+                </div>
+            </div>
+            
+        </div>
+        <div id="menu3" class="tab-pane fade">
+          <h3>Menu 3</h3>
+          <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        </div> -->
+    </div>
+    
+</div>
+
+{% endblock content %}
+
+<!-- <div class="tab-content col-lg-12">
+    <div class="home card">
+        <div class="card-header"><strong>Company</strong><small> Form</small></div>
+        <div class="card-body card-block">
+            <div class="form-group"><label for="company" class=" form-control-label">Company</label><input type="text" id="company" placeholder="Enter your company name" class="form-control"></div>
+            <div class="form-group"><label for="vat" class=" form-control-label">VAT</label><input type="text" id="vat" placeholder="DE1234567890" class="form-control"></div>
+            <div class="form-group"><label for="street" class=" form-control-label">Street</label><input type="text" id="street" placeholder="Enter street name" class="form-control"></div>
+            <div class="row form-group">
+                <div class="col-8">
+                <div class="form-group"><label for="city" class=" form-control-label">City</label><input type="text" id="city" placeholder="Enter your city" class="form-control"></div>
+                </div>
+                <div class="col-8">
+                <div class="form-group"><label for="postal-code" class=" form-control-label">Postal Code</label><input type="text" id="postal-code" placeholder="Postal Code" class="form-control"></div>
+                </div>
+            </div>
+            <div class="form-group"><label for="country" class=" form-control-label">Country</label><input type="text" id="country" placeholder="Country name" class="form-control"></div>
+        </div>
+    </div>
+    <div class="menu1 card">
+        <div class="card-header"><strong>Company 2</strong><small> Form</small></div>
+        <div class="card-body card-block">
+            <div class="form-group"><label for="company" class=" form-control-label">Company2</label><input type="text" id="company" placeholder="Enter your company name" class="form-control"></div>
+            <div class="form-group"><label for="vat" class=" form-control-label">VAT</label><input type="text" id="vat" placeholder="DE1234567890" class="form-control"></div>
+            <div class="form-group"><label for="street" class=" form-control-label">Street</label><input type="text" id="street" placeholder="Enter street name" class="form-control"></div>
+            <div class="row form-group">
+                <div class="col-8">
+                <div class="form-group"><label for="city" class=" form-control-label">City</label><input type="text" id="city" placeholder="Enter your city" class="form-control"></div>
+                </div>
+                <div class="col-8">
+                <div class="form-group"><label for="postal-code" class=" form-control-label">Postal Code</label><input type="text" id="postal-code" placeholder="Postal Code" class="form-control"></div>
+                </div>
+            </div>
+            <div class="form-group"><label for="country" class=" form-control-label">Country</label><input type="text" id="country" placeholder="Country name" class="form-control"></div>
+        </div>
+    </div>
+</div> -->

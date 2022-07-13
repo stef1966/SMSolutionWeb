@@ -1,0 +1,38 @@
+<!DOCTYPE html>  
+{% load static %}
+<head>  
+ <title>Playing YouTube video on HTML5 canvas</title>  
+ <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width" />  
+ <style type="text/css">  
+body {
+        margin: 0px;
+        padding: 0px;
+      } 
+ </style>  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+ </head>  
+ <body>  
+<img id="scream" src="{% static 'images/plan.jpg' %}" alt="The Scream" width="600">
+
+<p>Canvas:</p>
+<canvas id="myCanvas" width="1000" height="500" >
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+    window.onload = function() {
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      var img = document.getElementById('scream');
+    
+      context.drawImage(img, 10, 10);
+    
+      context.beginPath();
+      context.rect(188, 50, 200, 100);
+      context.fillStyle = 'yellow';
+      context.fill();
+      context.lineWidth = 2;
+      context.strokeStyle = 'black';
+      context.stroke();
+    }
+    </script>
